@@ -1,0 +1,26 @@
+%%
+% Please see https://bitbucket.org/rivanvx/beamer/wiki/Home for obtaining beamer.
+%%
+
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+Beweis für \textbf{[Lit\_15b]} Satz 12.1 (12.7):
+
+"keine Alterung bei Exponentialverteilung"
+
+\begin{align*}
+	\quad & P( \lbrace t < T_B \leq t + \Delta t \rbrace / \lbrace T_B > t \rbrace)\\
+	\overset{(12.6)}{=} & \frac{F_{TB}(t + \Delta t) - F_{TB}(t)}{1-F_{TB}(t)} \\
+	\overset{(12.4)}{=} & \frac{(1-e^{-\lambda(t + \Delta t)}) - (1-e^{-\lambda t})}{1-(1-e^{-\lambda t})}\\
+	= & \frac{1 - e^{-\lambda(t + \Delta t)} - 1 + e^{-\lambda t}}{e^{-\lambda t}} \\
+	= & \frac{e^{-\lambda t} - e^{-\lambda(t + \Delta t)}}{e^{-\lambda t}} \\
+	= & 1 - \frac{e^{-\lambda(t + \Delta t)}}{e^{-\lambda t}} \\
+	= & 1 - e^{-\lambda(t + \Delta t) + \lambda t} \\
+	= & 1 - e^{-\lambda t - \lambda \Delta t + \lambda t} \\
+	= & 1 - e^{-\lambda \Delta t} \qed
+\end{align*}
+\end{document}
